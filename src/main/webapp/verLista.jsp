@@ -45,9 +45,9 @@
 
     <% for (Elemento e : elementos) { %>
     <article>
-        <img src="<%= e.imagen %>" alt="<%= e.nombre %>" width="150">
         <h2><%= e.nombre %>
         </h2>
+        <img src="<%= e.imagen %>" alt="<%= e.nombre %>" width="150">
         <p><strong>Grupo:</strong> <%= e.grupo %>
         </p>
         <p><strong>Número:</strong> <%= e.numero %>
