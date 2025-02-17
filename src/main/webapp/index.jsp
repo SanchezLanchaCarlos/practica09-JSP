@@ -39,7 +39,7 @@
         </article>
         <article id="formulario">
             <h2>Formulario</h2>
-            <form id="personaForm">
+            <form id="personaForm" action="verZodiaco.jsp">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]{2,50}" title="Solo letras, mínimo 2 caracteres">
 
