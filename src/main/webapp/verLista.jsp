@@ -8,7 +8,7 @@
 </head>
 <body>
 <header>
-    <h1><%= "Ver Lista de Elementos" %>
+    <h1><%= "Ver Lista de Deportes" %>
     </h1>
     <nav>
         <ul>
@@ -36,18 +36,18 @@
         }
 
         List<Elemento> elementos = new ArrayList<>();
-        elementos.add(new Elemento("Fútbol", "Deporte", 11, "imagenes/futbol.jpg", "1863"));
-        elementos.add(new Elemento("Baloncesto", "Deporte", 5, "imagenes/baloncesto.jpeg", "1891"));
-        elementos.add(new Elemento("África", "Continente", 54, "imagenes/africa.jpg", "-"));
-        elementos.add(new Elemento("América", "Continente", 35, "imagenes/america.jpg", "-"));
-        elementos.add(new Elemento("Asia", "Continente", 48, "imagenes/asia.jpg", "-"));
+        elementos.add(new Elemento("Fútbol", "Grupal", 11, "imagenes/futbol.jpg", "1863"));
+        elementos.add(new Elemento("Baloncesto", "Grupal", 5, "imagenes/baloncesto.jpeg", "1891"));
+        elementos.add(new Elemento("Tenis", "Individual", 54, "imagenes/tenis.jpg", "-"));
+        elementos.add(new Elemento("Padel", "Parejas", 35, "imagenes/padel.jpeg", "-"));
+        elementos.add(new Elemento("Ping-Pong", "Individual", 48, "imagenes/ping-pong.jpg", "-"));
     %>
 
     <% for (Elemento e : elementos) { %>
     <article>
         <h2><%= e.nombre %>
         </h2>
-        <img src="<%= e.imagen %>" alt="<%= e.nombre %>" width="150">
+        <img src="<%= e.imagen %>" alt="<%= e.nombre %>"width="300" height="200">
         <p><strong>Grupo:</strong> <%= e.grupo %>
         </p>
         <p><strong>Número:</strong> <%= e.numero %>
