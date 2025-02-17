@@ -9,7 +9,5 @@
 </h1>
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
-<br/>
-<a href="verTabla.jsp">Ver Tabla de Libros</a>
 </body>
 </html>
