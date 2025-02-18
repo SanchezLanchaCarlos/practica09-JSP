@@ -6,6 +6,7 @@ document.getElementById("personaForm").addEventListener("submit", function(event
 
     if (nombre && apellido && fechaNacimiento) {
         alert(`Registro realizado:\nNombre: ${nombre}\nApellido: ${apellido}\nFecha de Nacimiento: ${fechaNacimiento}`);
+        document.getElementById("personaForm").submit();
     } else {
         alert("Por favor, completa todos los campos.");
     }

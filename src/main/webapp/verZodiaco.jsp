@@ -1,11 +1,10 @@
-<%@ page import="org.example.practica09sanchezlanchacarlos.*" %>
-<jsp:useBean id="calendario" class="org.example.practica09sanchezlanchacarlos.JspCalendar" scope="page" />
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<jsp:useBean id="calendario" class="org.example.practica09sanchezlanchacarlos.JspCalendar" />
 <jsp:useBean id="usuario" class="org.example.practica09sanchezlanchacarlos.UsuarioBean" scope="session" />
 <jsp:setProperty name="usuario" property="*" />
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultados - Edad y Signo Zodiacal</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
@@ -28,24 +27,28 @@
         <h2>Datos Personales</h2>
 
         <%
-            int edad = -1;
-            String signo = "Desconocido";
-
             if (usuario.getFechaNacimiento() != null && !usuario.getFechaNacimiento().isEmpty()) {
                 calendario.setFechaNacimiento(usuario.getFechaNacimiento());
-                edad = calendario.getEdad();
-                signo = calendario.getSignoZodiaco();
-            }
+                int edad = calendario.getEdad();
+                String signo = calendario.getSignoZodiaco();
         %>
-
         <p><strong>Nombre:</strong> <jsp:getProperty name="usuario" property="nombre"/></p>
         <p><strong>Apellido:</strong> <jsp:getProperty name="usuario" property="apellido"/></p>
         <p><strong>Fecha de Nacimiento:</strong> <jsp:getProperty name="usuario" property="fechaNacimiento"/></p>
-        <p><strong>Edad:</strong> <%= (edad != -1) ? edad + " años" : "No calculada" %></p>
+        <p><strong>Edad:</strong> <%= edad %></p>
         <p><strong>Signo Zodiacal:</strong> <%= signo %></p>
 
+        <%
+            }else{
+        %>
+
+        <p>Rellene el formulario</p>
+
+        <%
+            }
+        %>
         <div id="botones">
-            <button onclick="location.href='index.jsp'">Volver al Formulario</button>
+            <button onclick="location.href='index.jsp#personaForm'">Volver al Formulario</button>
         </div>
     </article>
 

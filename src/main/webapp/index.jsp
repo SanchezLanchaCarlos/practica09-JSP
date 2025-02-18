@@ -6,7 +6,7 @@
 <head>
     <title>Página de Inicio</title>
     <link rel="stylesheet" href="styles.css"/>
-    <!--<script defer src="script.js"></script>-->
+    <script defer src="script.js"></script>
     <link rel="shortcut icon" href="imagenes/favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -14,7 +14,6 @@
         <h1><%= "Bienvenido a nuestra página" %></h1>
         <nav>
             <ul>
-                <!--<li><a href="hello-servlet">Hello Servlet</a></li>-->
                 <li><a href="#autores">Autores</a></li>
                 <li><a href="#descripcion">Descripción</a></li>
                 <li><a href="#formulario">Formulario</a></li>
@@ -37,12 +36,12 @@
         </article>
         <article id="descripcion">
             <h2>Descripción</h2>
-            <p>Aquí iría la descripción de la página</p>
+            <p>Práctica 9 PSP. Implementación de una aplicación web haciendo uso de JSP, HTML, CSS y JavaScript.</p>
         </article>
         <article id="formulario">
             <h2>Formulario</h2>
 
-            <form id="personaForm" action="verZodiaco.jsp"  method="get">
+            <form id="personaForm" action="verZodiaco.jsp">
 
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]{2,50}" title="Solo letras, mínimo 2 caracteres">
