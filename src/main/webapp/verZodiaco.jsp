@@ -1,6 +1,7 @@
-<%@ page import="org.example.practica09sanchezlanchacarlos.JspCalendar" %>
+<%@ page import="org.example.practica09sanchezlanchacarlos.*" %>
 <jsp:useBean id="calendario" class="org.example.practica09sanchezlanchacarlos.JspCalendar" scope="page" />
-
+<jsp:useBean id="usuario" class="org.example.practica09sanchezlanchacarlos.UsuarioBean" scope="session" />
+<jsp:setProperty name="usuario" property="*" />
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -27,25 +28,19 @@
         <h2>Datos Personales</h2>
 
         <%
-            // Recuperar parámetros enviados desde index.jsp
-            String nombre = request.getParameter("nombre");
-            String apellido = request.getParameter("apellido");
-            String fechaNacimiento = request.getParameter("fechaNacimiento");
-
-
             int edad = -1;
             String signo = "Desconocido";
 
-            if (fechaNacimiento != null && !fechaNacimiento.isEmpty()) {
-                calendario.setFechaNacimiento(fechaNacimiento);
+            if (usuario.getFechaNacimiento() != null && !usuario.getFechaNacimiento().isEmpty()) {
+                calendario.setFechaNacimiento(usuario.getFechaNacimiento());
                 edad = calendario.getEdad();
                 signo = calendario.getSignoZodiaco();
             }
         %>
 
-        <p><strong>Nombre:</strong> <%= (nombre != null) ? nombre : "No recibido" %></p>
-        <p><strong>Apellido:</strong> <%= (apellido != null) ? apellido : "No recibido" %></p>
-        <p><strong>Fecha de Nacimiento:</strong> <%= (fechaNacimiento != null) ? fechaNacimiento : "No recibido" %></p>
+        <p><strong>Nombre:</strong> <jsp:getProperty name="usuario" property="nombre"/></p>
+        <p><strong>Apellido:</strong> <jsp:getProperty name="usuario" property="apellido"/></p>
+        <p><strong>Fecha de Nacimiento:</strong> <jsp:getProperty name="usuario" property="fechaNacimiento"/></p>
         <p><strong>Edad:</strong> <%= (edad != -1) ? edad + " años" : "No calculada" %></p>
         <p><strong>Signo Zodiacal:</strong> <%= signo %></p>
 
@@ -53,6 +48,7 @@
             <button onclick="location.href='index.jsp'">Volver al Formulario</button>
         </div>
     </article>
+
 </section>
 
 <footer>

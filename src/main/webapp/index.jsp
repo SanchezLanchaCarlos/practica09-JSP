@@ -1,10 +1,12 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<jsp:useBean id="usuario" class="org.example.practica09sanchezlanchacarlos.UsuarioBean" scope="session" />
+<jsp:setProperty name="usuario" property="*" />
 <!DOCTYPE html>
 <html>
 <head>
     <title>Página de Inicio</title>
     <link rel="stylesheet" href="styles.css"/>
-    <script defer src="script.js"></script>
+    <!--<script defer src="script.js"></script>-->
     <link rel="shortcut icon" href="imagenes/favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -39,11 +41,9 @@
         </article>
         <article id="formulario">
             <h2>Formulario</h2>
-<<<<<<< HEAD
-            <form id="personaForm" action="verZodiaco.jsp" method="get">
-=======
+
             <form id="personaForm" action="verZodiaco.jsp"  method="get">
->>>>>>> 952eedde1fb1328722249e7c85f1e5d2ed185dbd
+
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]{2,50}" title="Solo letras, mínimo 2 caracteres">
 
